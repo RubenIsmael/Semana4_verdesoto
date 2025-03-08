@@ -1,0 +1,23 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Consulta de Pacientes</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Enfermero</th>
+            <th>Habitación</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var consulta in Model)
+        {
+            <tr>
+                <td>@consulta.PacienteNombre</td>
+                <td>@consulta.EnfermeroNombre</td>
+                <td>@consulta.HabitacionNumero</td>
+            </tr>
+        }
+    </tbody>
+</table>

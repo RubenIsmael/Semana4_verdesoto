@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Semana_3.Models.PacienteModel>
+
+<h2>Lista de Pacientes</h2>
+
+<form method="get">
+    <input type="text" name="searchString" placeholder="Buscar..." />
+    <button type="submit">Buscar</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Habitación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model)
+        {
+            <tr>
+                <td>@paciente.Nombre</td>
+                <td>@paciente.Apellido</td>
+                <td>@paciente.Edad</td>
+                <td>@paciente.Telefono</td>
+                <td>@paciente.Habitacion?.Numero</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Edit", new { id = paciente.IdPaciente })">Editar</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = paciente.IdPaciente })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Agregar Paciente</a>

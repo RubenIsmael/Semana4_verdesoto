@@ -1,0 +1,25 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Reportes de Tratamientos</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Enfermero</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reporte in Model)
+        {
+            <tr>
+                <td>@reporte.PacienteNombre @reporte.PacienteApellido</td>
+                <td>@reporte.EnfermeroNombre @reporte.EnfermeroApellido</td>
+                <td>@reporte.Descripcion</td>
+                <td>@reporte.Fecha.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

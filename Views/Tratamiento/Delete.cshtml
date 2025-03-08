@@ -1,0 +1,12 @@
+﻿@model Semana_3.Models.TratamientoModel
+
+<h2>Eliminar Tratamiento</h2>
+
+<div>
+    <h4>¿Estás seguro de que deseas eliminar el tratamiento @Model.Nombre?</h4>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="IdTratamiento" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a class="btn btn-secondary" href="@Url.Action("Index")">Cancelar</a>
+    </form>
+</div>

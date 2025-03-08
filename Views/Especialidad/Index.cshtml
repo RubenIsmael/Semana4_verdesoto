@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Semana_3.Models.EspecialidadModel>
+
+<h2>Lista de Especialidades</h2>
+
+<form method="get">
+    <input type="text" name="searchString" placeholder="Buscar..." />
+    <button type="submit">Buscar</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th
+                   <th>Descripción</th>
+            <th>Funciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var especialidad in Model)
+        {
+            <tr>
+                <td>@especialidad.Nombre</td>
+                <td>@especialidad.Descripcion</td>
+                <td>@especialidad.Funciones</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Edit", new { id = especialidad.IdEspecialidad })">Editar</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = especialidad.IdEspecialidad })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Agregar Especialidad</a>

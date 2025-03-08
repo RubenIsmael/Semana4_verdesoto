@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Semana_3.Models.EnfermeroModel>
+
+<h2>Lista de Enfermeros</h2>
+
+<form method="get">
+    <input type="text" name="searchString" placeholder="Buscar..." />
+    <button type="submit">Buscar</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Especialidad</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var enfermero in Model)
+        {
+            <tr>
+                <td>@enfermero.Nombre</td>
+                <td>@enfermero.Apellido</td>
+                <td>@enfermero.Especialidad?.Nombre</td>
+                <td>@enfermero.Telefono</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Edit", new { id = enfermero.IdEnfermero })">Editar</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = enfermero.IdEnfermero })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Agregar Enfermero</a>
