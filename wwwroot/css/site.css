@@ -1,0 +1,130 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+@font-face {
+    font-family: 'Chocolate Covered Raindrops';
+    src: url('../Fonts/Chocolate Covered Raindrops.ttf') format('truetype'); /* Asegúrate de que la ruta sea correcta */
+}
+
+body {
+    font-family: 'Chocolate Covered Raindrops', sans-serif;
+}
+
+.nav-link {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .nav-link:hover {
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+    }
+@font-face {
+    font-family: 'PrincessSofia';
+    src: url('../Fonts/PrincessSofia-Regular.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Monterey';
+    src: url('../Fonts/MontereyFLF.ttf') format('truetype');
+}
+
+
+body {
+    font-family: 'Monterey', sans-serif;
+    line-height: 1.6;
+}
+
+h1, .display-title {
+    font-family: 'PrincessSofia', cursive;
+    font-size: 3.5rem;
+    color: #2a4365;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-section {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+
+.cta-button {
+    background: #4299e1;
+    color: white !important;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+    .cta-button:hover {
+        background: #3182ce;
+        transform: scale(1.05);
+    }
+
+
+@media (max-width: 768px) {
+    h1.display-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-section {
+        min-height: 60vh;
+    }
+
+    .privacy-section {
+        padding: 4rem 0;
+        background: #f8f9fa;
+    }
+
+    .access-requirements {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .security-icon {
+        font-size: 2.5rem;
+        color: #4299e1;
+        margin-bottom: 1rem;
+    }
+}
